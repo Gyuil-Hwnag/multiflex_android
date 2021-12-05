@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_btm_nav_home"
+        android:icon="@drawable/ic_total_view_unselected"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:checkable="true"
+        android:title="메인" />
+
+    <item
+        android:id="@+id/menu_main_btm_nav_register"
+        android:icon="@mipmap/ic_add_foreground"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="예매" />
+
+
+    <item
+        android:id="@+id/menu_main_btm_nav_my_page"
+        android:icon="@drawable/ic_setting_view_unselected"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="마이페이지" />
+
+</menu>

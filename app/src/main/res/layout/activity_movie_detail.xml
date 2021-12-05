@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@mipmap/ic_close_foreground"
+            android:scaleType="centerCrop">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/movie_name_tool"
+            android:layout_width="250dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="겟 아웃"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+        </TextView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/line_main"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line_main"
+        android:paddingBottom="130dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/movie_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/movie1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitCenter"
+                android:background="@color/black">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/movie_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/movie_img"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="17dp"
+                android:text="겟 아웃"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/movie_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/movie_time"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="15dp"
+                android:textColor="@color/register_login_blue"
+                android:text="15세 이용가">
+            </TextView>
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/movie_star"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="장편 | 일반영화 | 애니메이션 | 109분 19초 | 전체관람가 | 미국"
+                app:layout_constraintTop_toBottomOf="@id/line2"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+            </TextView>
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/summary"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="감독 및 배우"
+                app:layout_constraintTop_toBottomOf="@id/line3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/txt1"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/producer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="바이론 하워드|자레드 부시|채리스 카스트로 스미스"
+                app:layout_constraintTop_toBottomOf="@id/txt1"
+                android:textColor="@color/black"
+                android:layout_marginTop="7dp"
+                android:gravity="center">
+            </TextView>
+
+            <TextView
+                android:id="@+id/actors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="바이론 하워드|자레드 부시|채리스 카스트로 스미스"
+                app:layout_constraintTop_toBottomOf="@id/producer"
+                android:textColor="@color/black"
+                android:layout_marginTop="7dp"
+                android:gravity="center">
+            </TextView>
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/actors"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="영화 내용"
+                app:layout_constraintTop_toBottomOf="@id/line4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/txt2"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="콜롬비아의 깊은 산 속,
+놀라운 마법과 활기찬 매력이 넘치는 세계 ‘엔칸토’.
+그 곳에는 특별한 능력을 지닌 마드리갈 패밀리가 살고 있다.
+‘엔칸토’의 마법 덕분에 초인적 힘, 치유하는 힘 등
+저마다 특별한 능력을 가지고 태어난 마드리갈 패밀리.
+하지만 ‘미라벨’은 가족 중 유일하게 아무런 능력이 없다.
+어느 날, ‘엔칸토’를 둘러싼 마법의 힘이 위험에 처하자
+‘미라벨’은 유일하게 평범한 자신이
+특별한 이 가족의 마지막 희망일지 모른다고 생각하는데..
+평범한 ‘미라벨’은 과연 기적을 만들 수 있을까?\n
+전 세대 관객들에게 따뜻한 웃음과 감동을 선사할 마법 같은 영화!
+11월, 디즈니의 매직이 또 한 번 시작된다"
+                app:layout_constraintTop_toBottomOf="@id/txt2"
+                android:textColor="@color/black"
+                android:layout_marginTop="7dp"
+                android:gravity="center">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="바로 예매"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/login_btn_shape"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="15dp">
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
