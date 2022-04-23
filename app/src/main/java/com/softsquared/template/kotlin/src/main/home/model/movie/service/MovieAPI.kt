@@ -7,6 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface MovieAPI {
-    @GET("/app/movies")
+    @GET("/app/movie")
     fun getMovie(): Call<MovieResponse>
 }

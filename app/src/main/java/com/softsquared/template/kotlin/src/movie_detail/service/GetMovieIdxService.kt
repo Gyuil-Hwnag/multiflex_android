@@ -1,9 +1,7 @@
 package com.softsquared.template.kotlin.src.movie_detail.service
 
 import com.softsquared.template.kotlin.config.ApplicationClass
-import com.softsquared.template.kotlin.src.main.home.model.movie.model.MovieResponse
 import com.softsquared.template.kotlin.src.movie_detail.model.MovieIdxResponse
-import com.tintin.topping.kotlin.src.streaming.model.MovieAPI
 import com.tintin.topping.kotlin.src.streaming.model.MovieIdxAPI
 import retrofit2.Call
 import retrofit2.Callback

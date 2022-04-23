@@ -11,6 +11,9 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        // fire base
+        classpath 'com.google.gms:google-services:4.3.10'  // Google Services plugin
     }
 }
 
@@ -23,6 +26,9 @@ allprojects {
         maven {
             url 'https://naver.jfrog.io/artifactory/maven/'
         }
+
+        // kakao
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/'}
     }
 }
 

@@ -55,11 +55,8 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
         locationSource = FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
 
         binding.preBtn.setOnClickListener {
-            var intent = Intent(this, LocationActivity::class.java)
-            startActivity(intent)
+            finish()
         }
-
-
         // 카메라가 멈출시
 
 
@@ -114,6 +111,11 @@ class MapActivity : BaseActivity<ActivityMapBinding>(ActivityMapBinding::inflate
         uiSettings.isScaleBarEnabled = false // 거리
         uiSettings.isZoomControlEnabled = false // 줌
         uiSettings.isLocationButtonEnabled = true // 내가 있는곳
+        naverMap.mapType = NaverMap.MapType.Navi
+
+        // 다크 모드
+        naverMap.isNightModeEnabled = true
+        naverMap.isLiteModeEnabled = false
 
         //맵 위치 변경시 리스너
         naverMap.addOnCameraChangeListener(this)

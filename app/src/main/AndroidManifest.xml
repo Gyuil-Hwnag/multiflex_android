@@ -15,7 +15,8 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup">
+        tools:ignore="AllowBackup"
+        android:hardwareAccelerated="true">
         <activity
             android:name=".src.splash.SplashActivity"
             android:screenOrientation="portrait"
@@ -27,6 +28,19 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+                <data android:host="oauth"
+                    android:scheme="kakaocc57c0c2854c736b9ecd39cd963cdea2" />
+            </intent-filter>
+        </activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="7qf52r4ces" />
@@ -40,6 +54,16 @@
             android:name=".src.ticketing.TicketingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".src.movie_time.MovieTimeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".src.qrcode.CreateQrActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".src.register.RegisterActivity"
             android:screenOrientation="portrait"
@@ -49,6 +73,11 @@
             android:name=".src.location.LocationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".src.qrcode.QrScannerActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:replace="screenOrientation"/>
 
         <activity
             android:name=".src.movie_select.MovieSelectActivity"

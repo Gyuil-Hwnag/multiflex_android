@@ -49,7 +49,13 @@ class CalenderActivity : BaseActivity<ActivityCalenderBinding>(ActivityCalenderB
                 val month: Int = calendar.get(Calendar.MONTH)
                 val year: Int = calendar.get(Calendar.YEAR)
                 val week: String = SimpleDateFormat("EE").format(calendar.getTime())
-                val day_full = year.toString()+(month+1).toString()+day.toString()
+                if(day < 10){
+                    result = "0"+day.toString()
+                }
+                else{
+                    result = day.toString()
+                }
+                val day_full = year.toString()+(month+1).toString()+result
                 result_day = day_full
                 result = year.toString()+"년 "+(month+1).toString()+"월 "+day.toString()+"일"
             }

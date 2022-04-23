@@ -1,5 +1,6 @@
 package com.softsquared.template.kotlin.src.ticketing
 
+import android.app.Activity
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.src.ticketing.model.CurrentSeat
 import com.softsquared.template.kotlin.src.ticketing.model.Seat
 
-class SeatAdapter(private val itemList : ArrayList<Seat>) :
+class SeatAdapter(private val itemList : ArrayList<CurrentSeat>, var Activity: TicketingActivity, val userIdx: Int) :
     RecyclerView.Adapter<SeatAdapter.ViewHolder>(){
-    var datas = ArrayList<Seat>()
+    var datas = ArrayList<CurrentSeat>()
+    var count = 0
 
     class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView){
@@ -24,24 +27,36 @@ class SeatAdapter(private val itemList : ArrayList<Seat>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if(!itemList.get(position).is_check){
-            holder.seat_num.setText(itemList.get(position).seat_num.toString())
+        var count_txt = Activity.findViewById<TextView>(R.id.count)
+        var price = Activity.findViewById<TextView>(R.id.price)
+
+        if(itemList.get(position).userIdx == 0){
+            itemList.get(position).is_check = false
+            holder.seat_num.setText(itemList.get(position).seatIdx.toString())
             holder.seat_num.setBackgroundResource(R.drawable.seat_select_custom)
             holder.seat_num.setTextColor(Color.parseColor("#000000"))
         }
         else{
+            itemList.get(position).is_check = true
+            holder.seat_num.setText(itemList.get(position).seatIdx.toString())
             holder.seat_num.setTextColor(Color.parseColor("#FFFFFF"))
             holder.seat_num.setBackgroundResource(R.drawable.seat_select_ok_custom)
         }
 
         holder.itemView.setOnClickListener {
-            if(itemList.get(position).is_check){
+            if(itemList.get(position).is_check && itemList.get(position).userIdx == 0){
+                count = count-1
+                count_txt.setText(count.toString()+" 명")
+                price.setText((count*10000).toString()+" 원")
                 itemList.get(position).is_check = false
                 holder.seat_num.setBackgroundResource(R.drawable.seat_select_custom)
                 holder.seat_num.setTextColor(Color.parseColor("#000000"))
             }
-            else{
+            else if((!itemList.get(position).is_check) && itemList.get(position).userIdx == 0){
                 itemList.get(position).is_check = true
+                count = count+1
+                count_txt.setText(count.toString()+" 명")
+                price.setText((count*10000).toString()+" 원")
                 holder.seat_num.setTextColor(Color.parseColor("#FFFFFF"))
                 holder.seat_num.setBackgroundResource(R.drawable.seat_select_ok_custom)
             }

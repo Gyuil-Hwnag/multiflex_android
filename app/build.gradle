@@ -83,4 +83,25 @@ dependencies {
     // recycler view
     compile 'com.android.support:appcompat-v7:27.1.1'
     compile 'com.android.support:recyclerview-v7:27.1.1'
+
+    // qrcode
+    implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+    implementation 'com.google.zxing:core:3.3.0'
+
+    // kakao login
+//    implementation "com.kakao.sdk:v2-user:2.0.5"
+    implementation "com.kakao.sdk:v2-user:2.8.3" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.8.3" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.8.3" // 카카오스토리
+    implementation "com.kakao.sdk:v2-link:2.8.3" // 메시지(카카오링크)
+    implementation "com.kakao.sdk:v2-navi:2.8.3" // 카카오내비
+
+    // firebase
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.0.1')
+
+    // Declare the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }

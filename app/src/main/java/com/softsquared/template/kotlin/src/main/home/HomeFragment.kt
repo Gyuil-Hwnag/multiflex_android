@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
+import com.kakao.sdk.common.util.Utility
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentHomeBinding
@@ -27,6 +31,8 @@ import com.softsquared.template.kotlin.src.main.home.model.movie.service.MovieVi
 import com.softsquared.template.kotlin.src.main.home.movie.movie
 import com.softsquared.template.kotlin.src.main.home.movie.movieAdapter
 import com.softsquared.template.kotlin.src.map.MapActivity
+import com.softsquared.template.kotlin.src.qrcode.CreateQrActivity
+import com.softsquared.template.kotlin.src.qrcode.QrScannerActivity
 import com.softsquared.template.kotlin.src.search_branch.SearchBranchActivity
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind, R.layout.fragment_home)
@@ -47,6 +53,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        var keyHash = Utility.getKeyHash(context!!)
+//        Log.d("kakao_login!!", keyHash.toString())
         GetMovieService(this).tryGetMovie()
         GetEventService(this).tryGetEvent()
 
@@ -63,6 +71,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
 
         binding.changeAddress.setOnClickListener {
             var intent = Intent(context, MapActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.qrScannner.setOnClickListener {
+            var intent = Intent(context, QrScannerActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.createQr.setOnClickListener {
+            var intent = Intent(context, CreateQrActivity::class.java)
             startActivity(intent)
         }
     }

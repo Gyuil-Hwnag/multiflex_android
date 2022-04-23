@@ -9,6 +9,6 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface MovieIdxAPI {
-    @GET("/app/movies/{movieIdx}")
+    @GET("/app/movie/{movieIdx}")
     fun getMovie(@Path("movieIdx") movieIdx: Int): Call<MovieIdxResponse>
 }

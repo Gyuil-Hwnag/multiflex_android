@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/login_edit_shape"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+<!--    "branchName": "대전서구점",-->
+<!--    "branchAddress": "대전 서구 문정로 77 로데오타운 5층 메가박스 대전점",-->
+<!--    "branchTelecom": 3001,-->
+<!--    "locationIdx": 3,-->
+<!--    "locationName": "대전",-->
+<!--    "idx": 7-->
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="영화 이름"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt1"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:text="듄"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieName"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="상영관"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/theaterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txt2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="15dp"
+        android:text="1관"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/theaterName"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="영화 시작 시간"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt3"
+        android:textSize="15dp"
+        android:layout_marginTop="5dp"
+        android:text="10:00:00"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startTime"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="인원수"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:text="1명"
+        android:textColor="@color/black">
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/count"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:text="가격"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt5"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:text="10000원"
+        android:textColor="@color/black">
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
